@@ -6,10 +6,10 @@
 
 ## Template ToDo list
 - [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
+- [x] Get familiar with the [template documentation][template].
+- [x] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
+- [x] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
+- [x] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
 - [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
 - [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
 - [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
@@ -18,11 +18,17 @@
 - [ ] Configure the [CODECOV_TOKEN](https://docs.codecov.com/docs/quick-start) secret for automated test coverage reports on PRs
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+This is an IntelliJ plugin for [vue-translation-batch-updater](https://github.com/PaulCombal/vue-translation-batch-updater) .
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+You have to have it installed on your project for this plugin to work.
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+This is a plugin for Jetbrains IDEs that provides an easy way to translate keys in your JSON and YAML i18n files using Google Gemini.
+
+Features:
+* Context-Menu Translation: Simply right-click on a JSON or YAML key in your project to translate it directly.
+* Seamless Integration: Works with JSON and YAML files, including those embedded within .vue files for i18n-loader.
+* Intelligent Key Recognition: The plugin intelligently identifies and targets the key you've selected, ensuring accurate translation of the desired content.
+* No Command Line Needed: Unlike the command line tool, this plugin allows you to translate keys without ever leaving your IDE, providing a more fluid development experience.
 <!-- Plugin description end -->
 
 ## Installation

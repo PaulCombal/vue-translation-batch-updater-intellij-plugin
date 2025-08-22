@@ -1,15 +1,39 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.paulcombal.vuetranslationbatchupdaterintellijplugin</id>
-    <name>vue-translation-batch-updater-intellij-plugin</name>
+    <name>vue-translation-batch-updater</name>
     <vendor>paulcombal</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.json</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
+    <actions>
+        <action id="com.github.paulcombal.vuetranslationbatchupdaterintellijplugin.actions.TranslateJsonAction"
+                class="com.github.paulcombal.vuetranslationbatchupdaterintellijplugin.actions.TranslateJsonAction"
+                text="Translate i18n Key"
+                description="Translate using the tt command line tool">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+
+        <action id="com.github.paulcombal.vuetranslationbatchupdaterintellijplugin.actions.TranslateYamlAction"
+                class="com.github.paulcombal.vuetranslationbatchupdaterintellijplugin.actions.TranslateYamlAction"
+                text="Translate i18n Key"
+                description="Translate using the tt command line tool">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.paulcombal.vuetranslationbatchupdaterintellijplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.paulcombal.vuetranslationbatchupdaterintellijplugin.startup.MyProjectActivity" />
+        <notificationGroup
+                id="my.plugin.notification.group"
+                displayType="BALLOON"
+                key="notificationGroupKey"
+                bundle="messages.MyBundle"
+                toolWindowId="Run"
+                isLogByDefault="true"
+        />
     </extensions>
 </idea-plugin>
